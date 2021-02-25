@@ -18,15 +18,15 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "web-vitals": "^0.2.4",
-    "json-server": "^0.16.1"
+    "json-server": "0.16.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server":"node server.js",
-    "json-server": "npx json-server --watch public/db.json --port=3001"
+    "server": "node server.js",
+    "json-server": "json-server --watch public/db.json --port=3001"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
@@ -46,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-server": "^0.16.3"
   }
 }
