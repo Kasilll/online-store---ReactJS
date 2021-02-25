@@ -1,5 +1,7 @@
 Интернет-магазин по заказу пиццы
 
+### Demo:https://react-pizzas22.herokuapp.com
+
 ### Stack:
 <ul>
     <li>ReactJS + хуки</li>
