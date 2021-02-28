@@ -9,10 +9,11 @@ import { setSortBy } from '../redux/action/filters';
 const cotegoryNames = [ 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые' ];
 
 const sortItems = [
-	{ name: 'популярности', type: 'popular' },
-	{ name: 'цене', type: 'price' },
-	{ name: 'алфавит', type: 'name' }
-];
+	{ name: 'популярности', type: 'popular', order: 'desc' },
+	{ name: 'цене', type: 'price', order: 'desc' },
+	{ name: 'алфавит', type: 'name', order: 'asc' },
+  ];
+
 
 export default function Home() {
 	const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export default function Home() {
 	const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded);
 	const { category, sortBy } = useSelector(({ filters }) => filters);
 
+	console.log(category)
 	const onSelectCategory = React.useCallback((index) => {
 		dispatch(setCategory(index));
 	});

@@ -1,12 +1,11 @@
 import React from 'react';
 
-
 const SortPopup = React.memo(function SortPopup({ items, activeSortType, onClickSortType }) {
 	const [ vireable, setzVireable ] = React.useState(false);
 	const sortRef = React.useRef();
-	
-	const activeLabel = items.find((obj) => obj.type === activeSortType).name
-	
+
+	const activeLabel = items.find((obj) => obj.type === activeSortType.type).name;
+
 	const onActiveItem = (index) => {
 		onClickSortType(index);
 		setzVireable(false);
@@ -42,11 +41,11 @@ const SortPopup = React.memo(function SortPopup({ items, activeSortType, onClick
 				{vireable && (
 					<div className="sort__popup">
 						<ul>
-							{items &&	
+							{items &&
 								items.map((obj, index) => (
 									<li
 										className={activeSortType === obj.type ? 'active' : ''}
-										onClick={() => onActiveItem(obj.type)}
+										onClick={() => onActiveItem(obj)}
 										key={`${obj.type}_${index}`}
 									>
 										{obj.name}
@@ -58,9 +57,6 @@ const SortPopup = React.memo(function SortPopup({ items, activeSortType, onClick
 			</div>
 		</div>
 	);
-}
-)
+});
 
-export default SortPopup 
-
-
+export default SortPopup;

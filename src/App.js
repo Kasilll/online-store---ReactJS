@@ -1,13 +1,11 @@
 import React from 'react';
 import './scss/app.scss';
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux';
 import { Header } from './components';
 import { Route } from 'react-router-dom';
 import { Home, Cart } from './page';
 
-
-function App( ) {
-	
+function App() {
 	const dispatch = useDispatch();
 
 	return (
